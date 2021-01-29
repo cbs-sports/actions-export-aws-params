@@ -22,7 +22,7 @@ An optional prefix to add to the variable name. For example, using `prefix: REAC
 
 ```yml
 - name: Get AWS SSM Parameter Store values
-  uses: cbs-sports/actions-export-aws-ssm-parameters@v1
+  uses: cbs-sports/actions-export-aws-params@v1
   with:
     path: "/your/param/path" # The path under which to retrieve params
     prefix: "REACT_APP_" # An optional prefix to add to the env var name
@@ -49,7 +49,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Get AWS SSM Parameter Store values
-        uses: cbs-sports/actions-export-aws-ssm-parameters@v1
+        uses: cbs-sports/actions-export-aws-params@v1
         with:
           path: /myapp/configs
           decrypt: true
