@@ -1,6 +1,6 @@
 {
   "name": "@cbs-sports/actions-export-aws-params",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Retrieves values from your AWS SSM Parameter Store and exports them as environment variables.",
   "main": "index.js",
   "scripts": {
