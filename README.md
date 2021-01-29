@@ -16,7 +16,7 @@ A Boolean value indicating whether to decrypt any `SecureString` parameter value
 
 ### `prefix`
 
-An optional prefix to add to the variable name. For example, using `prefix: REACT_APP_` with a parameter named `myapp/var` will export a variable named `$REACT_APP_MYAPP_VAR`.
+An optional prefix to add to the variable name. For example, using `prefix: REACT_APP_` with a parameter named `/myapp/var` will export a variable named `$REACT_APP_MYAPP_VAR`.
 
 ## Usage
 
