@@ -20,12 +20,12 @@ const AWS = require("aws-sdk");
 
     Parameters.forEach(({ Name, Value, Type }) => {
       const variable = prefix + Name.toUpperCase().replace(/^\//, "").replace(/\//g, "_");
-      core.exportVariable(variable, Value);
       // If we are decrypting SecureStrings, make sure the decrypted value isn't getting printed in the logs
       // (see https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#masking-a-value-in-log)
       if (WithDecryption && Type === "SecureString") {
         core.setSecret(Value);
       }
+      core.exportVariable(variable, Value);
       core.info(`Exported variable ${variable} (${Value})`);
     });
   } catch (error) {
