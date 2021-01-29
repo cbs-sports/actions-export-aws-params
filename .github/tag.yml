@@ -1,0 +1,21 @@
+name: "Update Major Tag"
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Parse Git Tag
+        run: echo "LATEST_MAJOR_TAG=${GITHUB_REF#refs/tags/}" | cut -d. -f 1 >> $GITHUB_ENV
+
+      - name: Tag Latest Commit
+        run: |
+          git tag ${{ env.LATEST_MAJOR_TAG }}
+          git push --tags

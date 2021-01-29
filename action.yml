@@ -1,0 +1,20 @@
+name: "Export AWS SSM Parameters"
+description: "Retrieves parameters from your AWS SSM Parameter Store and exports them as environment variables."
+branding:
+  icon: "sliders"
+  color: "orange"
+inputs:
+  path:
+    description: "The SSM Parameter Store path"
+    required: true
+  decrypt:
+    description: "Whether to decrypt any secure values"
+    required: false
+    default: false
+  prefix:
+    description: "An optional prefix to add to the env var names"
+    required: false
+    default: ""
+runs:
+  using: "node12"
+  main: "dist/index.js"
