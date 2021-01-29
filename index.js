@@ -24,7 +24,7 @@ const AWS = require("aws-sdk");
       // If we are decrypting SecureStrings, make sure the decrypted value isn't getting printed in the logs
       // (see https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#masking-a-value-in-log)
       if (WithDecryption && Type === "SecureString") {
-        core.setSecret("$" + variable); // e.g. ::add-mask::$MY_VAR
+        core.setSecret(Value);
       }
       core.info(`Exported variable ${variable} (${Value})`);
     });
