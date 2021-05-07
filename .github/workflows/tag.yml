@@ -17,5 +17,6 @@ jobs:
 
       - name: Tag latest commit
         run: |
+          git tag -d ${{ env.LATEST_MAJOR_TAG }}
           git tag ${{ env.LATEST_MAJOR_TAG }} ${{ env.GITHUB_SHA }}
           git push --tags
