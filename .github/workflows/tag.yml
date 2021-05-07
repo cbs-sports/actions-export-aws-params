@@ -1,9 +1,9 @@
 name: Update Major Tag
 
 on:
-  push:
+  create:
     tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+      - "v[0-9]+.[0-9]+.[0-9]+*"
 
 jobs:
   tag:
@@ -17,5 +17,5 @@ jobs:
 
       - name: Tag latest commit
         run: |
-          git tag ${{ env.LATEST_MAJOR_TAG }}
+          git tag ${{ env.LATEST_MAJOR_TAG }} ${{ env.GITHUB_SHA }}
           git push --tags
