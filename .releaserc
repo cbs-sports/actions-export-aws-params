@@ -48,16 +48,6 @@
       }
     ],
     "@semantic-release/release-notes-generator",
-    "@semantic-release/github",
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "package.json",
-          "package-lock.json"
-        ],
-        "message": "build(Release): bump version to ${nextRelease.version}"
-      }
-    ]
+    "@semantic-release/github"
   ]
 }
