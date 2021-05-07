@@ -7,8 +7,8 @@
     "package": "ncc build index.js -o dist --license licenses.txt"
   },
   "keywords": [],
-  "author": "Alex Havermale <alexander.havermale@cbsinteractive.com>",
-  "license": "UNLICENSED",
+  "author": "Alex Havermale (https://github.com/haversnail-cbs)",
+  "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "aws-sdk": "^2.832.0"
