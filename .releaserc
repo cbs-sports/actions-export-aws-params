@@ -41,7 +41,7 @@
             "release": "patch"
           },
           {
-            "scope": "no-release",
+            "scope": "revert",
             "release": false
           }
         ]
