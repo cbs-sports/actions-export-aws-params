@@ -34,7 +34,7 @@
           },
           {
             "type": "build",
-            "release": "patch"
+            "release": false
           },
           {
             "type": "deps",
