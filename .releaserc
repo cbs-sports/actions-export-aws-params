@@ -1,0 +1,53 @@
+{
+  "branches": [
+    "master"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "fix",
+            "release": "patch"
+          },
+          {
+            "type": "test",
+            "release": false
+          },
+          {
+            "type": "docs",
+            "release": false
+          },
+          {
+            "type": "style",
+            "release": false
+          },
+          {
+            "type": "refactor",
+            "release": "minor"
+          },
+          {
+            "type": "build",
+            "release": "patch"
+          },
+          {
+            "type": "deps",
+            "release": "patch"
+          },
+          {
+            "scope": "no-release",
+            "release": false
+          }
+        ]
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github"
+  ]
+}

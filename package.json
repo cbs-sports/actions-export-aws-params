@@ -4,7 +4,8 @@
   "description": "Retrieves values from your AWS SSM Parameter Store and exports them as environment variables.",
   "main": "index.js",
   "scripts": {
-    "package": "ncc build index.js -o dist --license licenses.txt"
+    "package": "ncc build index.js -o dist --license licenses.txt",
+    "release": "semantic-release"
   },
   "keywords": [],
   "author": "Alex Havermale (https://github.com/haversnail-cbs)",
