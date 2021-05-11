@@ -11,6 +11,10 @@ inputs:
     description: "Whether to decrypt any secure values"
     required: false
     default: false
+  recursive:
+    description: "Whether to include all parameters within a hierarchy"
+    required: false
+    default: true
   prefix:
     description: "An optional prefix to add to the env var names"
     required: false
