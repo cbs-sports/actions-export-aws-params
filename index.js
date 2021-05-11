@@ -16,7 +16,17 @@ const AWS = require("aws-sdk");
     const prefix = core.getInput("prefix");
     const Path = core.getInput("path", { required: true });
     const WithDecryption = core.getInput("decrypt") === "true";
-    const { Parameters } = await ssm.getParametersByPath({ Path, WithDecryption }).promise();
+
+    const options = { Path, WithDecryption, Recursive: true };
+    
+    let { NextToken, Parameters } = await ssm.getParametersByPath(options).promise();
+    
+    while (NextToken) {
+      options.NextToken = NextToken;
+      const results = await ssm.getParametersByPath(options).promise();
+      Parameters.push(results.Parameters);
+      NextToken = results.NextToken;
+    }
 
     Parameters.forEach(({ Name, Value, Type }) => {
       const variable = prefix + Name.toUpperCase().replace(/^\//, "").replace(/\//g, "_");
