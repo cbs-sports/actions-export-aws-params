@@ -14,6 +14,10 @@ This GitHub action retrieves values from AWS SSM Parameter Store for a given pat
 
 A Boolean value indicating whether to decrypt any `SecureString` parameter values. The default value is `false`.
 
+### `recursive`
+
+A Boolean value indicating whether to include all parameters within a hierarchy; for example, `/a` and `/a/b`. The default value is `true`.
+
 ### `prefix`
 
 An optional prefix to add to the variable name. For example, using `prefix: REACT_APP_` with a parameter named `/myapp/var` will export a variable named `$REACT_APP_MYAPP_VAR`.

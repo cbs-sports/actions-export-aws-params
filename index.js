@@ -16,11 +16,12 @@ const AWS = require("aws-sdk");
     const prefix = core.getInput("prefix");
     const Path = core.getInput("path", { required: true });
     const WithDecryption = core.getInput("decrypt") === "true";
+    const Recursive = core.getInput("recursive") === "true";
 
-    const options = { Path, WithDecryption, Recursive: true };
-    
+    const options = { Path, WithDecryption, Recursive };
+
     let { NextToken, Parameters } = await ssm.getParametersByPath(options).promise();
-    
+
     while (NextToken) {
       options.NextToken = NextToken;
       const results = await ssm.getParametersByPath(options).promise();
